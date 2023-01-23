@@ -7,18 +7,20 @@ h1 {
 }
 
 ul {
-  margin: 0 0 10px;
+  margin: 0;
   padding: 0;
 }
 
 li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   color: gray;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
   font-weight: 100;
   line-height: 2;
   height: 20px;
-  list-style: none;
 }
 
 .days {
@@ -42,6 +44,15 @@ li {
 .weather-icon {
   height: 60px;
   width: 60px;
+}
+
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
 
 .temperature {

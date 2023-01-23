@@ -35,6 +35,13 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
@@ -61,26 +68,32 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function convertToFahrenheit(event) {
+function converttoFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = 50;
 }
 
-function convertToCelsius(event) {
+function converttoCelsius(event) {
   event.preventDefault();
+  let celsiusTemperature = ((50 - 32) * 5) / 9;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 10;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
+let celsiuslink = document.querySelector("#celsius-link");
+celsiuslink.addEventListener("click", converttoCelsius);
+
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click", converttoFahrenheit);
 
 searchCity("Vinings");
