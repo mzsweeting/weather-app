@@ -46,6 +46,12 @@ li {
   width: 60px;
 }
 
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
 .weather-temperature .active {
   color: black;
   cursor: default;
@@ -53,6 +59,20 @@ li {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
 
 .temperature {

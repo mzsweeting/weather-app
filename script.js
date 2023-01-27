@@ -70,16 +70,22 @@ function getCurrentLocation(event) {
 
 function converttoFahrenheit(event) {
   event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 50;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function converttoCelsius(event) {
   event.preventDefault();
-  let celsiusTemperature = ((50 - 32) * 5) / 9;
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let fahrenheitTemperature = null;
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
