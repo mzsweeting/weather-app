@@ -1,5 +1,6 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
 }
 
 h1 {
@@ -39,6 +40,7 @@ li:first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 2px;
+  background-color: white;
 }
 
 .overview {
